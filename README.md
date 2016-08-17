@@ -13,6 +13,17 @@ Our project consists of two major applications:
 
 2- A client-side Android application. Its purpose is to receive the notification that is being sent from the "Server-side" app.
 
-To install the UWP C# application, simply load it Visual Studio 2015 and then run it.
+To install the UWP C# application, simply load it Visual Studio 2015 and then run it. Please note that you must have setup  
+
 The Android application can be downloaded from Google Play (once we upload it) but in the mean time, the source code can be found here, so in order to install it, you'll have to download Android Studio, load it in there and then either run it on a virtual device or just plug in your own device and run the project on it (note that "USB Debugging" must be enabled on your Android device).
+
+# Files
+
+MCP3008.cs: The MCP3008 10-bit Analog-to-Digital Converter (ADC), the code handles its initialization, communicating over the SPI bus with the chip, conversion to voltage, etc.
+
+Bmp280.cs: Handles the temperature sensor. Contains a variety of functions for the purpose of measuring the temperature.
+
+SendingNotification.cs: Responsible for connecting to a notifcation hub and uses the REST API of GCM to send a notification to Android devices using said notification hub. More info about the API can be found here: https://msdn.microsoft.com/en-us/library/azure/dn223273.aspx
+
+
 
