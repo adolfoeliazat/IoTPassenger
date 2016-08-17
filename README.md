@@ -13,7 +13,7 @@ Our project consists of two major applications:
 
 2- A client-side Android application. Its purpose is to receive the notification that is being sent from the "Server-side" app.
 
-To install the UWP C# application, simply load it Visual Studio 2015 and then run it. Please note that you must have setup  
+To install the UWP C# application, simply load it Visual Studio 2015 and then run it. Please note that you must have setup a notification hub and have created a project that supports Google Cloud Messaging, a setup tutorial can be found here: https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-android-push-notification-google-gcm-get-started/ 
 
 The Android application can be downloaded from Google Play (once we upload it) but in the mean time, the source code can be found here, so in order to install it, you'll have to download Android Studio, load it in there and then either run it on a virtual device or just plug in your own device and run the project on it (note that "USB Debugging" must be enabled on your Android device).
 
@@ -25,5 +25,7 @@ Bmp280.cs: Handles the temperature sensor. Contains a variety of functions for t
 
 SendingNotification.cs: Responsible for connecting to a notifcation hub and uses the REST API of GCM to send a notification to Android devices using said notification hub. More info about the API can be found here: https://msdn.microsoft.com/en-us/library/azure/dn223273.aspx
 
+
+MainPage.xaml.cs: The core of our project. Puts together everything above by initializing all the components (GPIO, MCP3008, BMP280 and Bluetooth)
 
 
