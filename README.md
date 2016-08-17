@@ -26,6 +26,6 @@ Bmp280.cs: Handles the temperature sensor. Contains a variety of functions for t
 SendingNotification.cs: Responsible for connecting to a notifcation hub and uses the REST API of GCM to send a notification to Android devices using said notification hub. More info about the API can be found here: https://msdn.microsoft.com/en-us/library/azure/dn223273.aspx
 
 
-MainPage.xaml.cs: The core of our project. Puts together everything above by initializing all the components (GPIO, MCP3008, BMP280 and Bluetooth)
+MainPage.xaml.cs: The core of our project. Pieces everything together by initializing all the components (GPIO, MCP3008, BMP280 and Bluetooth), connecting to them, and passing data along to the relevant components. It first connects to the OBDII, checks that the car is actually off and starts polling the sensors if so. When the sensors gather enough information to know for sure that someone is in the car, it sends a notification to the user.
 
-
+App.xaml.cs: Initializes the main page.
